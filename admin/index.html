@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Bio Builder - Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="loginScreen" class="container">
+    <div class="card loginCard">
+      <h2>🔒 Admin Login</h2>
+      <p class="loginHint">Please enter admin password</p>
+      <input type="password" id="passwordInput" placeholder="Enter Password">
+      <button id="loginBtn" class="btn btnFull">Login</button>
+      <p id="loginError" class="errorMsg">❌ Wrong password!</p>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="adminPanel" class="container" style="display:none;">
+    <div class="card">
+      <div class="topRow">
+        <h2>Admin Panel</h2>
+        <div class="topBtns">
+          <button id="refresh" class="btn" type="button">Refresh</button>
+          <button id="deleteAll" class="btn danger" type="button">Delete All</button>
+          <button id="logoutBtn" class="btn danger" type="button">Logout</button>
+        </div>
+      </div>
+
+      <div class="filters">
+        <input id="searchToken" placeholder="Search by Token / Address">
+        <button id="clearSearch" class="btn" type="button">Clear</button>
+      </div>
+
+      <div class="meta" id="metaInfo">Loading...</div>
+
+      <div id="list" class="list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
