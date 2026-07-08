@@ -6,19 +6,38 @@
 }
 
 body{
-  background:#0f172a;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 40px,
+      rgba(239, 68, 68, 0.1) 40px,
+      rgba(239, 68, 68, 0.1) 42px,
+      transparent 42px,
+      transparent 80px,
+      rgba(34, 211, 238, 0.1) 80px,
+      rgba(34, 211, 238, 0.1) 82px
+    ),
+    linear-gradient(135deg, #000000 0%, #1a0033 50%, #000000 100%);
+  background-size: 200px 200px, 100% 100%;
+  animation: stripeMove 8s linear infinite;
   color:#fff;
   padding:20px;
+  min-height: 100vh;
 }
 
+@keyframes stripeMove {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 200px 200px, 0 0; }
+}
 .container{
   max-width:850px;
   margin:auto;
 }
 
 .card{
-  background:#1e293b;
-  border:1px solid #334155;
+  background:#242424;
+  border:1px solid #1f1f1f;
   border-radius:15px;
   padding:20px;
 }
@@ -346,5 +365,41 @@ h2{
   }
   .toolbar{
     justify-content:center;
+  }
+}
+
+.developerText{
+  text-align:center;
+  margin-top:20px;
+  color:#94a3b8;
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:500;
+  text-transform:uppercase;
+}
+
+.mainTitle{
+  text-align:center;
+  font-size:48px;
+  font-weight:700;
+  margin-bottom:70px;
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #eab308, #22c55e, #22d3ee, #3b82f6, #a855f7, #ec4899, #ef4444);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing:2px;
+  animation: rainbowMove 10s linear infinite;
+}
+
+@keyframes rainbowMove {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@media(max-width:500px){
+  .mainTitle{
+    font-size:32px;
+    letter-spacing:1px;
   }
 }
